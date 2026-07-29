@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>رفيق المسلم</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <main>
+        <header><span class="moon">☾</span>
+            <div><span class="eyebrow" data-i18n="daily">رفيقك اليومي</span>
+                <h1 data-i18n="app">رفيق المسلم</h1>
+                <p id="prayer-status">جارٍ تحديد مواقيت الصلاة…</p>
+            </div><button id="language" class="lang" aria-label="Change language">EN</button>
+        </header>
+        <section class="card"><label class="switch-row"><span data-i18n="enable">تفعيل الرفيق</span><input id="enabled"
+                    type="checkbox"><i class="switch"></i></label><button id="location" class="secondary"
+                data-i18n="location">تحديث الموقع الآن</button><small id="location-status"></small></section>
+        <section class="card">
+            <div class="section-head">
+                <h2 data-i18n="reminders">التذكيرات الدورية</h2><span data-i18n="zero">0 = إيقاف</span>
+            </div>
+            <div class="grid reminders"><label><b data-i18n="zikr">ذكر</b><input id="azkarInterval" type="number"
+                        min="0" max="1440"><small data-i18n="minute">دقيقة</small></label><label><b
+                        data-i18n="dua">دعاء</b><input id="duaInterval" type="number" min="0" max="1440"><small
+                        data-i18n="minute">دقيقة</small></label><label><b data-i18n="ayahOrder">آية بالترتيب</b><input
+                        id="quranInterval" type="number" min="0" max="1440"><small
+                        data-i18n="minute">دقيقة</small></label><label><b data-i18n="hadith">حديث شريف</b><input
+                        id="hadithInterval" type="number" min="0" max="1440"><small
+                        data-i18n="minute">دقيقة</small></label></div>
+        </section>
+        <section class="card">
+            <h2 data-i18n="morningEvening">أذكار الصباح والمساء</h2><label class="switch-row"><span
+                    data-i18n="autoOpen">فتحها تلقائيًا</span><input id="morningEveningEnabled" type="checkbox"><i
+                    class="switch"></i></label>
+            <div class="grid"><label><span data-i18n="morning">الصباح</span><input id="morningTime" type="text"
+                        placeholder="07:00 ص"></label><label><span data-i18n="evening">المساء</span><input
+                        id="eveningTime" type="text" placeholder="06:00 م"></label></div><small
+                data-i18n="timeHint">اكتب الوقت بنظام 12 ساعة: 07:00 ص أو 07:00 AM</small>
+        </section>
+        <section class="card">
+            <h2 data-i18n="prayerAdhan">الصلاة والأذان</h2><label class="switch-row"><span
+                    data-i18n="prayerAlerts">تنبيهات الصلوات</span><input id="prayerEnabled" type="checkbox"><i
+                    class="switch"></i></label><label class="switch-row"><span data-i18n="playAdhan">تشغيل
+                    الأذان</span><input id="adhanSound" type="checkbox"><i class="switch"></i></label><label><span
+                    data-i18n="muezzin">صوت المؤذن</span><select id="adhanVoice">
+                    <option value="default" data-i18n="defaultAdhan">الأذان الافتراضي</option>
+                    <option value="marwanQassas" data-i18n="marwan">محمد مروان بن قسّاس — الحرم المدني</option>
+                    <option value="ahmedAlNufais" data-i18n="nufais">الشيخ أحمد النفيس</option>
+                    <option value="makkah" data-i18n="makkah">أذان مكة المكرمة</option>
+                    <option value="alAqsa" data-i18n="aqsa">أذان المسجد الأقصى</option>
+                    <option value="azan2" data-i18n="classic2">أذان كلاسيكي ٢</option>
+                    <option value="azan3" data-i18n="classic3">أذان كلاسيكي ٣</option>
+                </select></label><button id="previewAdhan" class="secondary" data-i18n="preview">▶ استمع
+                للمعاينة</button><label><span data-i18n="calculation">طريقة الحساب</span><select id="calculationMethod">
+                    <option value="5" data-i18n="egypt">الهيئة المصرية العامة للمساحة</option>
+                    <option value="4" data-i18n="umm">أم القرى</option>
+                    <option value="3" data-i18n="mwl">رابطة العالم الإسلامي</option>
+                    <option value="2">ISNA</option>
+                </select></label>
+        </section>
+        <button id="save"><span>✦</span> <span data-i18n="save">حفظ وتشغيل</span></button>
+        <div class="tests"><button data-test="azkar" data-i18n="zikrNow">ذكر الآن</button><button data-test="quran"
+                data-i18n="ayahNow">آية الآن</button><button data-test="hadith" data-i18n="hadithNow">حديث الآن</button>
+        </div>
+        <p id="status" role="status"></p>
+    </main>
+    <script src="popup.js"></script>
+</body>
+
+</html>
